@@ -179,7 +179,7 @@ nav {
 
 .exp__div-h2 {
     font-size: 35px;
-    padding-top: 20px;
+    padding-top: 13px;
     font-family: 'Oswald', 'Josefin Sans';
 }
 
@@ -187,15 +187,24 @@ nav {
     max-height: 120px;
     width: 85vw;
     border: 5px inset rgba(0, 78, 255, 0.8);
+    margin: 5px;
+}
+
+.contenedor-exp__div-a {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .exp__div-a {
-    font-size: 23px;
+    font-size: 24px;
     padding: 10px;
     font-weight: bold;
     color: rgb(0, 76, 255);
-    animation-name: visitá;
     animation-iteration-count: infinite;
+    animation-name: visitá;
     animation-duration: 1s;
     animation-direction: alternate;
     animation-timing-function: linear;
@@ -212,7 +221,7 @@ nav {
 }
 
 .exp__div-p {
-    font-size: 20px;
+    font-size: 19px;
     padding: 7px 20px;
 }
 
@@ -261,7 +270,7 @@ nav {
 
         .nav__div {
             flex-direction: row;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
         }
 
@@ -323,6 +332,25 @@ nav {
 
         .exp__div {
             height: 90vh;
+        }
+
+        .exp__div-h2 {
+            padding-top: 10px;
+        }
+
+        .exp__div-a {
+            padding: 5px;
+            font-size: 29px;
+        }
+
+        @keyframes visitá {
+            0% {
+                font-size: 30px;
+            }
+        
+            100% {
+                font-size: 31px;
+            }
         }
 
         .exp__div-p {
