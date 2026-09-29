@@ -1,0 +1,11 @@
+import { useState } from 'react'
+
+function Contacto() {
+  const [sent, setSent] = useState(false)
+  const submitForm = (event) => { event.preventDefault(); setSent(true) }
+  return (
+    <section id="contacto" className="contact-section section-wrap"><div className="contact-intro"><p className="eyebrow">CONTACTO</p><h2>Hablemos de<br /><span>tu próxima idea</span></h2><p>¿Tenés un proyecto en mente, una propuesta o simplemente querés charlar? Me encantaría escuchar sobre tu idea y ver cómo puedo ayudarte.</p><div className="contact-photo"><img src={ushuaiaPhoto} alt="Ushuaia, Argentina" /></div><div className="place-label">Ushuaia<br /><span>Argentina</span></div></div><div className="contact-right"><form className="contact-form" onSubmit={submitForm}><div className="form-title"><span className="icon-circle"><Icon name="chat" /></span><div><h3>Enviame un mensaje <Icon name="talk" size={11} light /></h3><p>Completá el formulario y te voy a responder lo antes posible</p></div></div><label>Nombre<input required placeholder="Tu nombre" /></label><label>Email<input required type="email" placeholder="tu@email.com" /></label><label>Asunto<input required placeholder="Seleccioná un asunto" /></label><label>Mensaje<textarea required maxLength="500" placeholder="Contame sobre tu idea..."></textarea><span className="counter">0/500</span></label><button className="button button-dark" type="submit"><Icon name="send" size={20} />{sent ? 'Mensaje enviado' : 'Enviar mensaje'}</button></form><div className="contact-links"><a href="mailto:rifftthiago19@gmail.com"><span className="icon-circle"><Icon name="mail" /></span><span><b>Email</b>rifftthiago19@gmail.com</span></a><a href="https://linkedin.com/in/thiagoriffo" target="_blank" rel="noreferrer"><span className="icon-circle"><Icon name="linkedin" /></span><span><b>LinkedIn</b>linkedin.com/thiagoriffo</span></a><a href="https://github.com/ThiagoR19" target="_blank" rel="noreferrer"><span className="icon-circle"><Icon name="github" /></span><span><b>GitHub</b>github.com/ThiagoR19</span></a></div></div></section>
+  )
+}
+
+export default Contacto

@@ -1,0 +1,1 @@
+export const strengths = [['code', 'Desarrollo web'], ['bulb', 'Aprendizaje continuo'], ['team', 'Trabajo en equipo'], ['chart', 'Orientado a resultados']]
