@@ -1,5 +1,6 @@
 import { hobbies } from '../context/hobbies'
 import { Icon } from '../context/icon'
+import { strengths } from '../context/strengths'
 import thiagoPhoto from './assets/thiago.jpeg'
 
 function SobreMi() {
