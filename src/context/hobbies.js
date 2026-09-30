@@ -1,1 +1,7 @@
-export const hobbies = [['skate', 'Skate'], ['rubik', 'Rubik'], ['chess', 'Ajedrez'], ['train', 'Calistenia'], ['paddle', 'Tenis de mesa']]
+export const hobbies = [
+  ['skate', 'Skate'],
+  ['rubik', 'Rubik'],
+  ['chess', 'Ajedrez'],
+  ['train', 'Calistenia'],
+  ['paddle', 'Tenis de mesa'],
+]
