@@ -4,10 +4,7 @@ import { projects } from '../context/projects.js'
 
 function Proyectos() {
   const [filter, setFilter] = useState('Todos')
-  const visibleProjects =
-    filter === 'Todos'
-      ? projects
-      : projects.filter((project) => project.category === filter)
+  const visibleProjects = filter === 'Todos' ? projects : projects.filter((project) => project.category === filter)
 
   return (
     <section id="proyectos" className="projects-section section-wrap">
@@ -24,7 +21,6 @@ function Proyectos() {
           reales.
         </p>
       </div>
-
       <div className="filters" role="group" aria-label="Filtrar proyectos">
         {['Todos', 'Solo', 'En equipo'].map((option) => (
           <button
@@ -58,21 +54,14 @@ function Proyectos() {
                   <Icon name="link" size={16} light />
                   Ver proyecto
                 </a>
-                <a
-                  className="small-button"
-                  href="https://github.com/ThiagoR19"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Icon name="github" size={17} />
-                  Código
-                </a>
+                <a className="small-button" href="https://github.com/ThiagoR19" target="_blank" rel="noreferrer">
+                  <Icon name="github" size={17} />Código</a>
               </div>
             </div>
           </article>
         ))}
       </div>
-    </section>
+    </section >
   )
 }
 

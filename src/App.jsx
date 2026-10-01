@@ -2,6 +2,8 @@ import Inicio from './components/Inicio.jsx'
 import SobreMi from './components/SobreMi.jsx'
 import Proyectos from './components/Proyectos.jsx'
 import Contacto from './components/Contacto.jsx'
+import Footer from './components/Footer.jsx'
+
 import './App.css'
 
 function App() {
@@ -13,11 +15,7 @@ function App() {
         <Proyectos />
         <Contacto />
       </main>
-
-      <footer>
-        <span>© 2026 Thiago Riffo</span>
-        <span>Hecho con código y buenas ideas.</span>
-      </footer>
+      <Footer />
     </div>
   )
 }
