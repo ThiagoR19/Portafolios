@@ -5,6 +5,16 @@ import laptopPhoto from '../assets/laptop.webp'
 function Inicio() {
   return (
     <section id="inicio" className="hero-section section-wrap">
+      <header className="site-header">
+        <nav aria-label="Navegación principal">
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#proyectos">Proyectos</a>
+          <a className="header-cta" href="#contacto">
+            Hablemos <Icon name="talk" size={11} light />
+          </a>
+        </nav>
+      </header>
       <div className="hero-copy">
         <p className="eyebrow">DESARROLLADOR WEB</p>
         <h1>
@@ -74,13 +84,6 @@ function Inicio() {
       </div>
       <div className="hero-disc disc-right">
         <Icon name="code" size={46} light />
-        <p>
-          “Cada proyecto
-          <br />
-          es una oportunidad
-          <br />
-          para aprender algo nuevo.”
-        </p>
       </div>
       <div className="hero-disc disc-quote">
         “Disciplina hoy,
