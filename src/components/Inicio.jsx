@@ -1,5 +1,5 @@
 import { Icon } from '../context/icon.jsx'
-import ushuaiaPhoto from '../assets/ushuaia.jpg'
+import ushuaiaPhoto from '../assets/ushuaia2.jpg'
 import laptopPhoto from '../assets/laptop.webp'
 
 const CONTACT_EMAIL = 'riffothiago19@gmail.com'
@@ -36,6 +36,7 @@ function Inicio() {
             Ver mis proyectos
           </a>
           <a className="button button-outline" href="#sobre-mi">
+            <Icon name="user" size={20} />
             Sobre mí
           </a>
         </div>

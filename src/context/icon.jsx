@@ -17,6 +17,7 @@ import tableTenisIcon from '../assets/tableTenis_icon.svg'
 import talkIcon from '../assets/talk_icon.svg'
 import trainIcon from '../assets/train_icon.svg'
 import downArrowIcon from '../assets/downArrow_icon.svg'
+import userIcon from '../assets/user_icon.svg'
 
 const iconAssets = {
   bulb: bulbIcon,
@@ -38,6 +39,7 @@ const iconAssets = {
   talk: talkIcon,
   train: trainIcon,
   downArrow: downArrowIcon,
+  user: userIcon,
 }
 
 export const Icon = ({ name, size = 24, light = false }) => {
