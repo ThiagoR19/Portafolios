@@ -3,7 +3,9 @@ import { Icon } from '../context/icon.jsx'
 import ushuaiaPhoto from '../assets/ushuaia.jpg'
 
 const MAX_MESSAGE_LENGTH = 500
-const CONTACT_EMAIL = 'rifftthiago19@gmail.com'
+const CONTACT_EMAIL = 'riffothiago19@gmail.com'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/thiago-riffo-835a0223b/'
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}`
 
 function Contacto() {
   const [message, setMessage] = useState('')
@@ -106,7 +108,7 @@ function Contacto() {
         </form>
 
         <div className="contact-links">
-          <a href={`mailto:${CONTACT_EMAIL}`}>
+          <a href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer">
             <span className="icon-circle">
               <Icon name="mail" />
             </span>
@@ -116,7 +118,7 @@ function Contacto() {
             </span>
           </a>
           <a
-            href="https://linkedin.com/in/thiagoriffo"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noreferrer"
           >
@@ -125,7 +127,7 @@ function Contacto() {
             </span>
             <span>
               <b>LinkedIn</b>
-              linkedin.com/thiagoriffo
+              linkedin.com/in/thiago-riffo-835a0223b
             </span>
           </a>
           <a

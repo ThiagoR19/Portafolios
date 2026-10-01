@@ -2,6 +2,10 @@ import { Icon } from '../context/icon.jsx'
 import ushuaiaPhoto from '../assets/ushuaia.jpg'
 import laptopPhoto from '../assets/laptop.webp'
 
+const CONTACT_EMAIL = 'riffothiago19@gmail.com'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/thiago-riffo-835a0223b/'
+const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}`
+
 function Inicio() {
   return (
     <section id="inicio" className="hero-section section-wrap">
@@ -54,14 +58,14 @@ function Inicio() {
             <Icon name="github" />
           </a>
           <a
-            href="https://linkedin.com/in/thiagoriffo"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
           >
             <Icon name="linkedin" />
           </a>
-          <a href="mailto:rifftthiago19@gmail.com" aria-label="Email">
+          <a href={GMAIL_COMPOSE_URL} target="_blank" rel="noreferrer" aria-label="Email">
             <Icon name="mail" />
           </a>
         </div>
@@ -83,6 +87,7 @@ function Inicio() {
         <span>Y MÁS</span>
       </div>
       <div className="hero-disc disc-right">
+        <img className="disc-right-image" src={laptopPhoto} alt="" />
         <Icon name="code" size={46} light />
       </div>
       <div className="hero-disc disc-quote">
