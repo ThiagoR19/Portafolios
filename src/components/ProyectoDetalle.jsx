@@ -17,10 +17,12 @@ function ProyectoDetalle({ project }) {
           <p className="eyebrow">{project.field}</p>
           <h1 id="project-title" tabIndex={-1}>{project.title}</h1>
           <p className="project-detail-lede">{project.description}</p>
-          <p className="project-team">
-            <Icon name="team" size={18} />
-            Desarrollado en equipo
-          </p>
+          {project.team !== false && (
+            <p className="project-team">
+              <Icon name="team" size={18} />
+              Desarrollado en equipo
+            </p>
+          )}
           <div className="tags project-stack">
             {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
           </div>

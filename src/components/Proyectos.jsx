@@ -12,9 +12,8 @@ function Proyectos() {
           en <span>soluciones</span>
         </h2>
         <p>
-          Cuatro proyectos que desarrollé <strong>en equipo</strong> y se usaron
-          para <strong>resolver necesidades reales</strong> en la educación,
-          el comercio y la gestión.
+          Cinco proyectos que se usaron para <strong>resolver necesidades reales</strong>
+          en la educación, el comercio y la gestión.
         </p>
       </div>
 
