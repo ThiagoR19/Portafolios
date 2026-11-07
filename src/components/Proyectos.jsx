@@ -1,67 +1,47 @@
-import { useState } from 'react'
 import { Icon } from '../context/icon.jsx'
 import { projects } from '../context/projects.js'
 
 function Proyectos() {
-  const [filter, setFilter] = useState('Todos')
-  const visibleProjects = filter === 'Todos' ? projects : projects.filter((project) => project.category === filter)
-
   return (
-    <section id="proyectos" className="projects-section section-wrap">
+    <section id="proyectos" className="projects-section section-wrap" aria-labelledby="projects-title">
       <div className="section-heading">
         <p className="eyebrow">PROYECTOS</p>
-        <h2>
+        <h2 id="projects-title" tabIndex={-1}>
           Ideas que se convierten
           <br />
           en <span>soluciones</span>
         </h2>
         <p>
-          Una selección de proyectos en los que trabajé, aplicando mis
-          conocimientos de desarrollo web, diseño y resolución de problemas
-          reales.
+          Cuatro proyectos que desarrollé <strong>en equipo</strong> y se usaron
+          para <strong>resolver necesidades reales</strong> en la educación,
+          el comercio y la gestión.
         </p>
-      </div>
-      <div className="filters" role="group" aria-label="Filtrar proyectos">
-        {['Todos', 'Solo', 'En equipo'].map((option) => (
-          <button
-            key={option}
-            type="button"
-            className={filter === option ? 'active' : ''}
-            aria-pressed={filter === option}
-            onClick={() => setFilter(option)}
-          >
-            {option}
-          </button>
-        ))}
       </div>
 
       <div className="project-grid">
-        {visibleProjects.map((project) => (
-          <article className="project-card" key={project.id}>
-            <div className={`project-visual ${project.tone}`}>
-              <Icon name="code" size={42} />
+        {projects.map((project) => (
+          <article className="project-card" key={project.slug}>
+            <div className="project-visual">
+              <img src={project.screens[0].src} alt={project.screens[0].alt} loading="lazy" decoding="async" />
             </div>
             <div className="project-content">
+              <p className="project-field">{project.field}</p>
               <h3>{project.title}</h3>
-              <p>{project.description}</p>
+              <p className="project-description">{project.description}</p>
               <div className="tags">
                 {project.tags.map((tag) => (
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
-              <div className="project-actions">
-                <a className="small-button dark" href="#contacto">
-                  <Icon name="link" size={16} light />
-                  Ver proyecto
-                </a>
-                <a className="small-button" href="https://github.com/ThiagoR19" target="_blank" rel="noreferrer">
-                  <Icon name="github" size={17} />Código</a>
-              </div>
+              <a className="small-button dark" href={`#proyectos/${project.slug}`} aria-label={`Ver proyecto ${project.title}`}>
+                <Icon name="link" size={16} light />
+                Ver proyecto
+              </a>
             </div>
           </article>
         ))}
       </div>
-    </section >
+    </section>
   )
 }
 
