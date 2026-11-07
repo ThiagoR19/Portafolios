@@ -1925,8 +1925,8 @@ footer {
 
 /* Keep the hero's original spacing while revealing its navigation on scroll. */
 .site-header-spacer {
-  flex: 0 0 38px;
-  height: 38px;
+  flex: 0 0 0;
+  height: 0;
 }
 
 .site-header {
@@ -1952,8 +1952,8 @@ footer {
 
 @media (max-width: 900px) {
   .site-header-spacer {
-    flex-basis: 66px;
-    height: 66px;
+    flex-basis: 0;
+    height: 0;
   }
 
   .site-header {
