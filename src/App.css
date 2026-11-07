@@ -1950,6 +1950,30 @@ footer {
   visibility: visible;
 }
 
+@media (min-width: 901px) {
+  .site-header {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: 38px;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    visibility: visible;
+  }
+
+  .site-header.is-visible {
+    position: fixed;
+    inset: 0 0 auto;
+    width: 100%;
+    height: 58px;
+    background: rgba(255, 255, 255, .96);
+    box-shadow: 0 4px 18px rgba(29, 34, 39, .08);
+  }
+}
+
 @media (max-width: 900px) {
   .site-header-spacer {
     flex-basis: 0;
