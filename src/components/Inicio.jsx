@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { Icon } from '../context/icon.jsx'
 import ushuaiaPhoto from '../assets/ushuaia2.jpg'
 import laptopPhoto from '../assets/laptop.webp'
@@ -7,9 +8,19 @@ const LINKEDIN_URL = 'https://www.linkedin.com/in/thiago-riffo-835a0223b/'
 const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}`
 
 function Inicio() {
+  const [showHeader, setShowHeader] = useState(() => window.scrollY > 40)
+
+  useEffect(() => {
+    const updateHeaderVisibility = () => setShowHeader(window.scrollY > 40)
+
+    window.addEventListener('scroll', updateHeaderVisibility, { passive: true })
+    return () => window.removeEventListener('scroll', updateHeaderVisibility)
+  }, [])
+
   return (
     <section id="inicio" className="hero-section section-wrap">
-      <header className="site-header">
+      <div className="site-header-spacer" aria-hidden="true" />
+      <header className={`site-header${showHeader ? ' is-visible' : ''}`}>
         <nav aria-label="Navegación principal">
           <a href="#inicio">Inicio</a>
           <a href="#sobre-mi">Sobre mí</a>

@@ -1922,3 +1922,43 @@ footer {
     display: none;
   }
 }
+
+/* Keep the hero's original spacing while revealing its navigation on scroll. */
+.site-header-spacer {
+  flex: 0 0 38px;
+  height: 38px;
+}
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  width: 100%;
+  height: 58px;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 4px 18px rgba(29, 34, 39, .08);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity .2s ease, transform .2s ease, visibility .2s;
+  visibility: hidden;
+}
+
+.site-header.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+@media (max-width: 900px) {
+  .site-header-spacer {
+    flex-basis: 66px;
+    height: 66px;
+  }
+
+  .site-header {
+    height: 66px;
+    background: var(--ink);
+    box-shadow: 0 4px 18px rgba(0, 0, 0, .18);
+  }
+}
