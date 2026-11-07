@@ -14,12 +14,14 @@ function Contacto() {
     event.preventDefault()
 
     const formData = new FormData(event.currentTarget)
-    const subject = encodeURIComponent(formData.get('subject'))
-    const body = encodeURIComponent(
-      `Nombre: ${formData.get('name')}\r\nEmail: ${formData.get('email')}\r\n\r\n${formData.get('message')}`,
+    const composeUrl = new URL(GMAIL_COMPOSE_URL)
+    composeUrl.searchParams.set('su', formData.get('subject'))
+    composeUrl.searchParams.set(
+      'body',
+      `Hola Thiago! Soy ${formData.get('name')}.\n\n${formData.get('message')}`,
     )
 
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`
+    window.open(composeUrl.toString(), '_blank', 'noopener,noreferrer')
   }
 
   return (
@@ -56,8 +58,8 @@ function Contacto() {
                 Enviame un mensaje <Icon name="talk" size={11} />
               </h3>
               <p>
-                Completá el formulario para abrir tu aplicación de correo con el
-                mensaje preparado y enviarlo desde allí.
+                Completá el formulario para abrir Gmail con el mensaje preparado
+                y enviarlo desde allí.
               </p>
             </div>
           </div>
@@ -69,16 +71,6 @@ function Contacto() {
               name="name"
               autoComplete="name"
               placeholder="Tu nombre"
-            />
-          </label>
-          <label>
-            Email
-            <input
-              required
-              type="email"
-              name="email"
-              autoComplete="email"
-              placeholder="tu@email.com"
             />
           </label>
           <label>
@@ -103,7 +95,7 @@ function Contacto() {
 
           <button className="button button-dark" type="submit">
             <Icon name="send" size={20} light />
-            Abrir correo
+            Abrir Gmail
           </button>
         </form>
 
