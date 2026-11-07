@@ -16,7 +16,14 @@ function ProyectoDetalle({ project }) {
         <header className="project-detail-heading">
           <p className="eyebrow">{project.field}</p>
           <h1 id="project-title" tabIndex={-1}>{project.title}</h1>
+          {project.realWorldUse && <p className="project-real-world project-real-world-detail">{project.realWorldUse}</p>}
           <p className="project-detail-lede">{project.description}</p>
+          {project.url && (
+            <a className="small-button dark project-live-link" href={project.url} target="_blank" rel="noreferrer">
+              <Icon name="link" size={16} light />
+              Visitar sitio
+            </a>
+          )}
           {project.team !== false && (
             <p className="project-team">
               <Icon name="team" size={18} />

@@ -24,6 +24,12 @@ import votos8 from '../assets/Imgs/votos8.svg'
 import votos9 from '../assets/Imgs/votos9.svg'
 import votos10 from '../assets/Imgs/votos10.svg'
 import celuStock from '../assets/Imgs/CeluStock.png'
+import celuStockInventario from '../assets/Imgs/CeluStock2.png'
+import celuStockEntradas from '../assets/Imgs/CeluStock3.png'
+import celuStockSalidas from '../assets/Imgs/CeluStock4.png'
+import celuStockFacturacion from '../assets/Imgs/CeluStock5.png'
+import celuStockProveedores from '../assets/Imgs/CeluStock6.png'
+import celuStockPanelClaro from '../assets/Imgs/CeluStock7.png'
 
 const additionalScreens = (screens) => screens.map(({ src, label, alt }) => ({ src, label, alt }))
 
@@ -31,6 +37,8 @@ export const projects = [
   {
     slug: 'celustock',
     title: 'CeluStock',
+    url: 'https://celustock.com.ar/',
+    realWorldUse: 'En uso actualmente para resolver necesidades reales de control de inventario y seguimiento de reparaciones.',
     field: 'Inventario y servicio técnico',
     description: 'Aplicación web multi-organización para administrar repuestos, compras, ventas, clientes y reparaciones desde un mismo sistema.',
     tags: ['React 19', 'TypeScript', 'Vite', 'TanStack Router', 'TanStack Query', 'Hono', 'Bun', 'Turborepo', 'PostgreSQL', 'Drizzle ORM', 'Better Auth', 'Zod'],
@@ -47,11 +55,62 @@ export const projects = [
     team: false,
     screens: [
       { src: celuStock, label: 'Panel de control', alt: 'Panel principal de CeluStock con resumen de inventario, alertas de stock crítico, movimientos recientes y accesos a compras y ventas' },
+      { src: celuStockPanelClaro, label: 'Panel de control · modo claro', alt: 'Panel principal de CeluStock en modo claro, con resumen de inventario, alertas de stock crítico y movimientos recientes' },
+      { src: celuStockInventario, label: 'Inventario', alt: 'Listado de repuestos de CeluStock con código, nombre, marca, tipo y niveles de stock' },
+      { src: celuStockEntradas, label: 'Entradas', alt: 'Registro de compras y entradas de repuestos con proveedor, cantidades y costos' },
+      { src: celuStockSalidas, label: 'Salidas', alt: 'Registro de ventas y salidas de repuestos con cliente, tipo y total cobrado' },
+      { src: celuStockFacturacion, label: 'Facturación', alt: 'Historial de facturación de CeluStock con períodos, movimientos, ítems y montos' },
+      { src: celuStockProveedores, label: 'Proveedores', alt: 'Listado de proveedores de CeluStock con datos de contacto' },
+    ],
+  },
+  {
+    slug: 'agi-propiedades',
+    title: 'AGI Propiedades',
+    field: 'Gestión inmobiliaria',
+    description: 'Plataforma web multi-inmobiliaria que centraliza propiedades, personas, visitas, contratos, pagos, documentos y mantenimiento, con información separada y accesos según el rol.',
+    tags: ['React', 'Node.js', 'Express', 'MySQL'],
+    challenge: 'La información repartida entre distintos registros dificulta el seguimiento de las operaciones. La plataforma debía reunir la gestión comercial y administrativa de varias inmobiliarias, manteniendo separados sus datos y respetando los permisos de cada persona.',
+    solution: 'Creamos entornos independientes para cada inmobiliaria, con accesos para administradores, agentes, propietarios e inquilinos, además de herramientas para que un superadministrador gestione las organizaciones. El catálogo público permite consultar propiedades y contactar a la agencia por WhatsApp; las visitas y operaciones se administran dentro de la plataforma.',
+    features: [
+      'Gestión centralizada de propiedades, personas, visitas, contratos, pagos, documentos y solicitudes de mantenimiento.',
+      'Panel de estadísticas, notificaciones, asignación y seguimiento de tareas, y registro de acciones para auditoría.',
+      'Chat privado para personas autenticadas, accesos privados para propietarios e inquilinos y gestión de inmobiliarias por el superadministrador.',
+    ],
+    screens: [
+      { src: agiPanel, label: 'Panel', alt: 'Panel de la inmobiliaria con agenda, estadísticas y reportes' },
+      { src: agiAgentes, label: 'Agentes', alt: 'Listado de agentes inmobiliarios con filtros y estados' },
+      { src: agiReportes, label: 'Reportes', alt: 'Detalle de un reporte de mantenimiento con fotografías' },
+      ...additionalScreens([
+        { src: inmobiliaria2, label: 'Mi Inmobiliaria', alt: 'Panel Mi Inmobiliaria de AGI Propiedades' },
+      ]),
+    ],
+  },
+  {
+    slug: 'my-car-management',
+    title: 'myCarManagement',
+    realWorldUse: 'En uso actualmente para gestionar vehículos, documentación y mantenimiento de una flota real.',
+    field: 'Gestión de flotas',
+    description: 'Aplicación web para gestionar vehículos, empleados, documentación y mantenimiento de flota, con alertas de vencimientos y control de repuestos.',
+    tags: ['React', 'JavaScript', 'Node.js', 'MySQL', 'Drizzle ORM'],
+    challenge: 'La gestión de vehículos, documentación y mantenimiento requiere reunir información dispersa y detectar a tiempo faltantes, vencimientos y necesidades de reparación.',
+    solution: 'Desarrollamos un sistema que organiza vehículos y empleados, permite configurar documentos requeridos según el tipo de vehículo y muestra los estados en un panel y un calendario. También registra reparaciones y movimientos de repuestos, envía informes por correo y ofrece permisos diferenciados para administradores y empleados.',
+    features: [
+      'Documentación por vehículo con adjuntos privados, historial de renovaciones y alertas de vencimiento.',
+      'Registro de reparaciones, kilometraje y repuestos, con validación de existencias e historial de movimientos.',
+      'Usuarios y auditoría con permisos diferenciados, importación de vehículos por CSV y exportación de listados e informes por correo.',
+    ],
+    screens: [
+      { src: flotaPanel, label: 'Panel de control', alt: 'Vista de gestión con próximos vencimientos y documentación pendiente' },
+      { src: flotaVehiculos, label: 'Vehículos', alt: 'Vista de gestión con filtros y listado de vehículos' },
+      ...additionalScreens([
+        { src: flotaInicio, label: 'Login', alt: 'Inicio de sesión de myCarManagement' },
+      ]),
     ],
   },
   {
     slug: 'gestora-de-votos',
     title: 'Gestora de votos',
+    realWorldUse: 'En uso actualmente en una institución educativa para organizar la votación de proyectos de la Expo Técnica.',
     field: 'Educación',
     description: 'Aplicación web de votación para que estudiantes, docentes y visitantes evalúen los proyectos de la Semana de la Educación Técnica del CTP Olga B. de Arko. Cada usuario puede votar hasta tres proyectos y anular sus votos.',
     tags: ['PHP', 'SQL', 'JavaScript', 'HTML', 'CSS'],
@@ -78,30 +137,9 @@ export const projects = [
     ],
   },
   {
-    slug: 'agi-propiedades',
-    title: 'AGI Propiedades',
-    field: 'Gestión inmobiliaria',
-    description: 'Plataforma web multi-inmobiliaria que centraliza propiedades, personas, visitas, contratos, pagos, documentos y mantenimiento, con información separada y accesos según el rol.',
-    tags: ['React', 'Node.js', 'Express', 'MySQL'],
-    challenge: 'La información repartida entre distintos registros dificulta el seguimiento de las operaciones. La plataforma debía reunir la gestión comercial y administrativa de varias inmobiliarias, manteniendo separados sus datos y respetando los permisos de cada persona.',
-    solution: 'Creamos entornos independientes para cada inmobiliaria, con accesos para administradores, agentes, propietarios e inquilinos, además de herramientas para que un superadministrador gestione las organizaciones. El catálogo público permite consultar propiedades y contactar a la agencia por WhatsApp; las visitas y operaciones se administran dentro de la plataforma.',
-    features: [
-      'Gestión centralizada de propiedades, personas, visitas, contratos, pagos, documentos y solicitudes de mantenimiento.',
-      'Panel de estadísticas, notificaciones, asignación y seguimiento de tareas, y registro de acciones para auditoría.',
-      'Chat privado para personas autenticadas, accesos privados para propietarios e inquilinos y gestión de inmobiliarias por el superadministrador.',
-    ],
-    screens: [
-      { src: agiPanel, label: 'Panel', alt: 'Panel de la inmobiliaria con agenda, estadísticas y reportes' },
-      { src: agiAgentes, label: 'Agentes', alt: 'Listado de agentes inmobiliarios con filtros y estados' },
-      { src: agiReportes, label: 'Reportes', alt: 'Detalle de un reporte de mantenimiento con fotografías' },
-      ...additionalScreens([
-        { src: inmobiliaria2, label: 'Mi Inmobiliaria', alt: 'Panel Mi Inmobiliaria de AGI Propiedades' },
-      ]),
-    ],
-  },
-  {
     slug: 'coffee-and-books',
     title: 'Coffee & Books',
+    url: 'https://coffee-and-books.onrender.com/',
     field: 'Comercio electrónico',
     description: 'Tienda web de una sola página para explorar libros y cafés importados en una experiencia visual de marca, con catálogo dinámico, fichas de producto, carrito y armado del pedido para WhatsApp.',
     tags: ['React 19', 'JavaScript', 'Vite', 'Wouter', 'Google Sheets API', 'localStorage'],
@@ -125,26 +163,5 @@ export const projects = [
         { src: coffee8, label: 'Home', alt: 'Página de inicio de Coffee & Books' },
       ]),
     ],
-  },
-  {
-    slug: 'my-car-management',
-    title: 'myCarManagement',
-    field: 'Gestión de flotas',
-    description: 'Aplicación web para gestionar vehículos, empleados, documentación y mantenimiento de flota, con alertas de vencimientos y control de repuestos.',
-    tags: ['React', 'JavaScript', 'Node.js', 'MySQL', 'Drizzle ORM'],
-    challenge: 'La gestión de vehículos, documentación y mantenimiento requiere reunir información dispersa y detectar a tiempo faltantes, vencimientos y necesidades de reparación.',
-    solution: 'Desarrollamos un sistema que organiza vehículos y empleados, permite configurar documentos requeridos según el tipo de vehículo y muestra los estados en un panel y un calendario. También registra reparaciones y movimientos de repuestos, envía informes por correo y ofrece permisos diferenciados para administradores y empleados.',
-    features: [
-      'Documentación por vehículo con adjuntos privados, historial de renovaciones y alertas de vencimiento.',
-      'Registro de reparaciones, kilometraje y repuestos, con validación de existencias e historial de movimientos.',
-      'Usuarios y auditoría con permisos diferenciados, importación de vehículos por CSV y exportación de listados e informes por correo.',
-    ],
-    screens: [
-      { src: flotaPanel, label: 'Panel de control', alt: 'Vista de gestión con próximos vencimientos y documentación pendiente' },
-      { src: flotaVehiculos, label: 'Vehículos', alt: 'Vista de gestión con filtros y listado de vehículos' },
-      ...additionalScreens([
-        { src: flotaInicio, label: 'Login', alt: 'Inicio de sesión de myCarManagement' },
-      ]),
-    ],
-  },
+  }
 ]

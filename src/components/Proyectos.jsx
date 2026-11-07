@@ -26,6 +26,9 @@ function Proyectos() {
             <div className="project-content">
               <p className="project-field">{project.field}</p>
               <h3>{project.title}</h3>
+              {project.realWorldUse && (
+                <p className="project-real-world">En uso actualmente</p>
+              )}
               <p className="project-description">{project.description}</p>
               <div className="tags">
                 {project.tags.map((tag) => (
